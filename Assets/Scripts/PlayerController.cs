@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     private readonly float moveSpeed = 30f;
     private readonly float xBoundary = 15f;
+    private readonly float zDownBoundary = 0;
+    private readonly float zUpBoundary = 5f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,18 +25,33 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // ----- Movement -----
-        float moveValue = moveAction.ReadValue<float>();
+        Vector2 moveValue = moveAction.ReadValue<Vector2>();
 
+        // X boundary
+        // Left Bound
         if(transform.position.x < -xBoundary)
         {
             transform.position = new Vector3(-xBoundary, transform.position.y, transform.position.z);
         }
+        // Right Bound
         if (transform.position.x > xBoundary)
         {
             transform.position = new Vector3(xBoundary, transform.position.y, transform.position.z);
         }
 
-        transform.Translate(moveSpeed * moveValue * Time.deltaTime * Vector3.right);
+        // Y boundary
+        // Down Bound
+        if (transform.position.z < zDownBoundary)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zDownBoundary);
+        }
+        // Up Bound
+        if (transform.position.z > zUpBoundary)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, zUpBoundary);
+        }
+
+        transform.Translate(moveSpeed * Time.deltaTime * new Vector3(moveValue.x, transform.position.y, moveValue.y));
 
         // ----- Throw Action -----
         if (throwAction.WasPressedThisFrame())
