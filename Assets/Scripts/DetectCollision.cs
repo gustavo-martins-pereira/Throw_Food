@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class MoveFoward : MonoBehaviour
+public class DetectCollision : MonoBehaviour
 {
-    public float moveSpeed = 30f;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +11,12 @@ public class MoveFoward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveSpeed * Time.deltaTime * Vector3.forward);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }

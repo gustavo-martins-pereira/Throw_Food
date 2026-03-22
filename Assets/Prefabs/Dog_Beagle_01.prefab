@@ -2999,6 +2999,8 @@ GameObject:
   - component: {fileID: 4634042237918953180}
   - component: {fileID: 1626713794130837465}
   - component: {fileID: 775827393940531088}
+  - component: {fileID: 7233954477966621844}
+  - component: {fileID: 6061853221378741152}
   m_Layer: 0
   m_Name: Dog_Beagle_01
   m_TagString: Untagged
@@ -3015,7 +3017,7 @@ Transform:
   m_GameObject: {fileID: 4104828639462409445}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -13.67, y: 0, z: 13.65}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3105,6 +3107,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37e2456c322980428bcc29a3a1fc5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyOutOfBounds
+--- !u!65 &7233954477966621844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104828639462409445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.14911437, y: 0.19316937, z: 0.25284824}
+  m_Center: {x: 0.0042790147, y: 0.09442652, z: 0.033138495}
+--- !u!114 &6061853221378741152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4104828639462409445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 023ad7d1f4bdcce4ab6091055b768e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectCollision
 --- !u!1 &4148944554725971786
 GameObject:
   m_ObjectHideFlags: 0

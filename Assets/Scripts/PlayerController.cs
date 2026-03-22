@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject projectilePrefab;
 
-    private readonly float moveSpeed = 20f;
+    private readonly float moveSpeed = 30f;
     private readonly float xBoundary = 15f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
